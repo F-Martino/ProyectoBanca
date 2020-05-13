@@ -85,6 +85,10 @@ public class Cliente {
 		this.cuentas = cuentas;
 	}
 	
+	public void nuevaCuenta(Cuenta c) {
+		this.cuentas.add(c);
+	}
+	
 	
 	
 	
