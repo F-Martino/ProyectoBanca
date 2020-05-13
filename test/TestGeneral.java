@@ -39,7 +39,7 @@ class TestGeneral {
 		cuentas3.add(c3);
 		cuentas3.add(c4);
 	}
-/*	
+
 	@Test
 	void testIngresarRetirar() {
 		tarjetas();
@@ -121,7 +121,7 @@ class TestGeneral {
 		Assertions.assertEquals(textoTarjetaCl3, cl3.verOperacionesConTarjeta());
 		
 	}
-*/
+
 	@Test
 	void TestMostrarDatos() {
 		tarjetas();
