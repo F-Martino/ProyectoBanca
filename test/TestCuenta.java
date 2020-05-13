@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -23,6 +25,26 @@ class TestCuenta {
 		Assertions.assertEquals(3672.89, c3.getSaldo());
 		Assertions.assertEquals(915.0, c1.getLimite());
 		Assertions.assertEquals("24/10/2012", c2.getFechaApertura());
+	
+		ArrayList<Tarjeta> tarjetas1 = new ArrayList<>();
+		ArrayList<Tarjeta> tarjetas2 = new ArrayList<>();
+		ArrayList<Tarjeta> tarjetas3 = new ArrayList<>();
+		Tarjeta t1 = new Tarjeta("6438-9345-6567", 350.8, 0);
+		Tarjeta t2 = new Tarjeta("7443-0662-1123", 670.4, 3);
+		Tarjeta t3 = new Tarjeta("1234-5678-9405", 150);
+		Tarjeta t4 = new Tarjeta("1000-5000-9900", 250);
+		tarjetas1.add(t1);
+		tarjetas2.add(t2);
+		tarjetas2.add(t3);
+		tarjetas3.add(t4);
+		
+		Cuenta c4 = new Cuenta("000-000-006", 10000, 500, "18/07/2017", tarjetas1);
+		c3.setTarjetas(tarjetas2);
+		c1.nuevaTarjeta(t4);
+		
+		Assertions.assertEquals(tarjetas1, c4.getTarjetas());
+		Assertions.assertEquals(tarjetas2, c3.getTarjetas());
+		Assertions.assertEquals(tarjetas3, c1.getTarjetas());
 	}
 
 }
