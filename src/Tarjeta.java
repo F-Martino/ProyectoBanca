@@ -40,7 +40,8 @@ public class Tarjeta {
 		this.numeroUsos = numeroUsos;
 	}
 	
-	
-	
+	public void usarTarjeta() {
+		this.numeroUsos++;
+	}
 	
 }

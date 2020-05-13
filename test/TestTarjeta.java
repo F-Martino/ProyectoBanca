@@ -23,6 +23,10 @@ class TestTarjeta {
 		Assertions.assertEquals(200.7, t3.getLimite());
 		Assertions.assertEquals(14, t3.getNumeroUsos());
 		Assertions.assertEquals(8, t1.getNumeroUsos());
+		
+		t1.usarTarjeta();
+		
+		Assertions.assertEquals(9, t1.getNumeroUsos());
 	}
 
 }
