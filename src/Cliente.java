@@ -89,28 +89,62 @@ public class Cliente {
 		this.cuentas.add(c);
 	}
 
-	public void ingresarDinero(double dinero, Cuenta c) throws Exception {
-		if(dinero < 1) throw new Exception("El dinero a ingresar no puede ser 0 o negativo.");
-		if(!this.cuentas.contains(c)) throw new Exception("La cuenta seleccionada no pertenece a este usuario.");
-		if(this.cuentas.contains(c))
-			c.setSaldo(c.getSaldo() + dinero);
+	public void ingresarDinero(double dinero, Cuenta c) {
+		if(dinero < 1) System.out.println("El dinero a ingresar no puede ser 0 o negativo.");
+		else {
+			if(!this.cuentas.contains(c)) System.out.println("La cuenta seleccionada no pertenece a este usuario.");
+			else
+				c.setSaldo(c.getSaldo() + dinero);
+		}
 	}
 
-	public void retirarDinero(double dinero, Cuenta c) throws Exception {
-		if(dinero < 1) throw new Exception("El dinero a retirar no puede ser 0 o negativo.");
-		if(!this.cuentas.contains(c)) throw new Exception("La cuenta seleccionada no pertenece a este usuario.");
-		if(this.cuentas.contains(c)) {
-			if(dinero >= c.getSaldo()) throw new Exception("El saldo no puede quedarse a 0 o negativo.");
+	public void retirarDinero(double dinero, Cuenta c) {
+		if(dinero < 1) System.out.println("El dinero a retirar no puede ser 0 o negativo.");
+		else {
+			if(!this.cuentas.contains(c)) System.out.println("La cuenta seleccionada no pertenece a este usuario.");
 			else {
-				if(dinero > c.getLimite()) throw new Exception("No puede retirarse mas dinero del limite permitido.");
-				else
-					c.setSaldo(c.getSaldo() - dinero);
+
+				if(dinero >= c.getSaldo()) System.out.println("El saldo no puede quedarse a 0 o negativo.");
+				else {
+					if(dinero > c.getLimite()) System.out.println("No puede retirarse mas dinero del limite permitido.");
+					else
+						c.setSaldo(c.getSaldo() - dinero);
+
+				}
+			}
+		}
+	}
+
+	public void pagarConTarjeta(double dinero, Tarjeta T) {
+		boolean tarjetaValida = false;
+		int punteroCuenta = 0;
+		int punteroAux = 0;
+		for(Cuenta i : this.cuentas) {
+			if(i.getTarjetas().contains(T)) {
+				tarjetaValida = true;
+				punteroCuenta = punteroAux;
+			}
+			punteroAux++;
+		}
+		if(!tarjetaValida) System.out.println("La tarjeta seleccionada no pertenece este usuario.");
+		else {
+			if(dinero > T.getLimite()) System.out.println("El pago supera el limite de la tarjeta.");
+			else {
+				retirarDinero(dinero, this.cuentas.get(punteroCuenta));
+				T.usarTarjeta();
 			}
 		}
 	}
 	
-	
-
-
+	public String verOperacionesConTarjeta() {
+		String texto = "";
+		for(Cuenta i : this.cuentas) {
+			for(Tarjeta j : i.getTarjetas()) {
+				texto += "Tarjeta Numero: " + j.getNumeroTarjeta() + ". Usos de la tarjeta: " + j.getNumeroUsos() + ".\n";
+			}
+		}
+		
+		return texto;
+	}
 
 }
