@@ -156,5 +156,10 @@ public class Cliente {
 		
 		return texto;
 	}
+	
+	public String verSaldoMedio() {
+		String texto = "";
+		return texto;
+	}
 
 }
