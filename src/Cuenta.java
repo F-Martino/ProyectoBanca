@@ -1,15 +1,26 @@
+import java.util.ArrayList;
 
 public class Cuenta {
 	private String numeroCuenta;
 	private double saldo;
 	private double limite;
 	private String fechaApertura;
+	private ArrayList<Tarjeta> tarjetas;
 	
 	public Cuenta(String numeroCuenta, double saldo, double limite, String fechaApertura) {
 		this.numeroCuenta = numeroCuenta;
 		this.saldo = saldo;
 		this.limite = limite;
 		this.fechaApertura = fechaApertura;
+		this.tarjetas = new ArrayList<>();
+	}
+	
+	public Cuenta(String numeroCuenta, double saldo, double limite, String fechaApertura, ArrayList<Tarjeta> tarjetas) {
+		this.numeroCuenta = numeroCuenta;
+		this.saldo = saldo;
+		this.limite = limite;
+		this.fechaApertura = fechaApertura;
+		this.tarjetas = tarjetas;
 	}
 
 	public String getNumeroCuenta() {
@@ -43,8 +54,18 @@ public class Cuenta {
 	public void setFechaApertura(String fechaApertura) {
 		this.fechaApertura = fechaApertura;
 	}
+
+	public ArrayList<Tarjeta> getTarjetas() {
+		return tarjetas;
+	}
+
+	public void setTarjetas(ArrayList<Tarjeta> tarjetas) {
+		this.tarjetas = tarjetas;
+	}
 	
-	
+	public void nuevaTarjeta(Tarjeta t) {
+		this.tarjetas.add(t);
+	}
 	
 	
 }
