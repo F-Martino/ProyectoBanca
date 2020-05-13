@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -30,6 +32,25 @@ class TestCliente {
 		Assertions.assertEquals("45592117W", cl2.getNif());
 		Assertions.assertEquals("6988888x", cl3.getTelefono());
 		Assertions.assertEquals(46, cl1.getEdad());
+		
+		ArrayList<Cuenta> cuentas1 = new ArrayList<>();
+		ArrayList<Cuenta> cuentas2 = new ArrayList<>();
+		ArrayList<Cuenta> cuentas3 = new ArrayList<>();
+		Cuenta c1 = new Cuenta("999-786-444", 4500.0, 900.0, "05/06/2015");
+		Cuenta c2 = new Cuenta("456-027-722", 58000.3, 1200.0, "23/10/2012");
+		Cuenta c3 = new Cuenta("123-005-556", 2324.9, 450.5, "18/02/2017");
+		cuentas1.add(c1);
+		cuentas2.add(c2);
+		cuentas2.add(c3);
+		cuentas3.add(c3);
+		
+		Cliente cl4 = new Cliente("X", "Y", "Z", "T", "6", 54, cuentas1);
+		cl2.setCuentas(cuentas2);
+		cl3.nuevaCuenta(c3);
+		
+		Assertions.assertEquals(cuentas1, cl4.getCuentas());
+		Assertions.assertEquals(cuentas2, cl2.getCuentas());
+		Assertions.assertEquals(cuentas3, cl3.getCuentas());
 	}
 
 }
