@@ -112,6 +112,14 @@ class TestGeneral {
 		cl2.pagarConTarjeta(200, t3);
 		Assertions.assertEquals(57700.3, c2.getSaldo());
 		Assertions.assertEquals(1, t3.getNumeroUsos());
+		
+		String textoTarjetaCl1 = "Tarjeta Numero: 6438-9345-6567. Usos de la tarjeta: 1.\n";
+		Assertions.assertEquals(textoTarjetaCl1, cl1.verOperacionesConTarjeta());
+		String textoTarjetaCl2 = "Tarjeta Numero: 7443-0662-1123. Usos de la tarjeta: 4.\nTarjeta Numero: 1234-5678-9405. Usos de la tarjeta: 1.\n";
+		Assertions.assertEquals(textoTarjetaCl2, cl2.verOperacionesConTarjeta());
+		String textoTarjetaCl3 = "Tarjeta Numero: 1000-5000-9900. Usos de la tarjeta: 1.\n";
+		Assertions.assertEquals(textoTarjetaCl3, cl3.verOperacionesConTarjeta());
+		
 	}
 	
 
