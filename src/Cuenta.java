@@ -67,5 +67,13 @@ public class Cuenta {
 		this.tarjetas.add(t);
 	}
 	
+	public String toString() {
+		String texto = "---CUENTA: Numero: " + this.numeroCuenta + ".\n---Saldo: " + this.saldo + "€.\n---Limite: " + this.limite + "€.\n---Fecha de apertura: " + this.fechaApertura + ".\n---Tarjetas de credito asociadas:";
+		for(Tarjeta i : this.tarjetas) {
+			texto += "\n" + i.toString(); 
+		}
+			
+		return texto;
+	}
 	
 }

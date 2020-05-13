@@ -44,4 +44,9 @@ public class Tarjeta {
 		this.numeroUsos++;
 	}
 	
+	public String toString() {
+		String texto = "-----Tarjeta: Numero: " + this.numeroTarjeta + ". Limite: " + this.limite + "€. Numero de usos: " + this.numeroUsos + ".";
+		return texto;
+	}
+	
 }

@@ -146,5 +146,15 @@ public class Cliente {
 		
 		return texto;
 	}
+	
+	public String verDatosUsuario() {
+		String texto = "USUARIO:\nNIF: " + this.nif + ".\nNombre: " + this.nombre + ". Apellidos: " + this.apellidos + ". Edad: " + this.edad + " años.\n";
+		texto += "Direccion: " + this.direccion + ". Telefono: " + this.telefono + ".\nCUENTAS BANCARIAS:";
+		for(Cuenta i : this.cuentas) {
+			texto += "\n" + i.toString();
+		}
+		
+		return texto;
+	}
 
 }
