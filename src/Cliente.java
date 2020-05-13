@@ -7,7 +7,7 @@ public class Cliente {
 	private String telefono;
 	private int edad;
 	private ArrayList<Cuenta> cuentas;
-	
+
 	public Cliente(String nombre, String apellidos, String direccion, String nif, String telefono, int edad) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -17,7 +17,7 @@ public class Cliente {
 		this.edad = edad;
 		this.cuentas = new ArrayList<>();
 	}
-	
+
 	public Cliente(String nombre, String apellidos, String direccion, String nif, String telefono, int edad , ArrayList<Cuenta> cuentas) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -75,7 +75,7 @@ public class Cliente {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	
+
 
 	public ArrayList<Cuenta> getCuentas() {
 		return cuentas;
@@ -84,13 +84,33 @@ public class Cliente {
 	public void setCuentas(ArrayList<Cuenta> cuentas) {
 		this.cuentas = cuentas;
 	}
-	
+
 	public void nuevaCuenta(Cuenta c) {
 		this.cuentas.add(c);
 	}
+
+	public void ingresarDinero(double dinero, Cuenta c) throws Exception {
+		if(dinero < 1) throw new Exception("El dinero a ingresar no puede ser 0 o negativo.");
+		if(!this.cuentas.contains(c)) throw new Exception("La cuenta seleccionada no pertenece a este usuario.");
+		if(this.cuentas.contains(c))
+			c.setSaldo(c.getSaldo() + dinero);
+	}
+
+	public void retirarDinero(double dinero, Cuenta c) throws Exception {
+		if(dinero < 1) throw new Exception("El dinero a retirar no puede ser 0 o negativo.");
+		if(!this.cuentas.contains(c)) throw new Exception("La cuenta seleccionada no pertenece a este usuario.");
+		if(this.cuentas.contains(c)) {
+			if(dinero >= c.getSaldo()) throw new Exception("El saldo no puede quedarse a 0 o negativo.");
+			else {
+				if(dinero > c.getLimite()) throw new Exception("No puede retirarse mas dinero del limite permitido.");
+				else
+					c.setSaldo(c.getSaldo() - dinero);
+			}
+		}
+	}
 	
 	
-	
-	
-	
+
+
+
 }
