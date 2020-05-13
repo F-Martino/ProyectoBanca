@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Cliente {
 	private String nombre, apellidos;
@@ -5,6 +6,7 @@ public class Cliente {
 	private String nif;
 	private String telefono;
 	private int edad;
+	private ArrayList<Cuenta> cuentas;
 	
 	public Cliente(String nombre, String apellidos, String direccion, String nif, String telefono, int edad) {
 		this.nombre = nombre;
@@ -13,6 +15,17 @@ public class Cliente {
 		this.nif = nif;
 		this.telefono = telefono;
 		this.edad = edad;
+		this.cuentas = new ArrayList<>();
+	}
+	
+	public Cliente(String nombre, String apellidos, String direccion, String nif, String telefono, int edad , ArrayList<Cuenta> cuentas) {
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.direccion = direccion;
+		this.nif = nif;
+		this.telefono = telefono;
+		this.edad = edad;
+		this.cuentas = cuentas;
 	}
 
 	public String getNombre() {
@@ -62,6 +75,16 @@ public class Cliente {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
+	
+
+	public ArrayList<Cuenta> getCuentas() {
+		return cuentas;
+	}
+
+	public void setCuentas(ArrayList<Cuenta> cuentas) {
+		this.cuentas = cuentas;
+	}
+	
 	
 	
 	
