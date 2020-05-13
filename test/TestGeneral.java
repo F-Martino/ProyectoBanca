@@ -39,7 +39,7 @@ class TestGeneral {
 		cuentas3.add(c3);
 		cuentas3.add(c4);
 	}
-	
+/*	
 	@Test
 	void testIngresarRetirar() {
 		tarjetas();
@@ -121,6 +121,56 @@ class TestGeneral {
 		Assertions.assertEquals(textoTarjetaCl3, cl3.verOperacionesConTarjeta());
 		
 	}
-	
+*/
+	@Test
+	void TestMostrarDatos() {
+		tarjetas();
+		cuentas();
+		
+		String textoCl1 = "USUARIO:\n" + 
+				"NIF: D1.\n" + 
+				"Nombre: A1. Apellidos: B1. Edad: 56 años.\n" + 
+				"Direccion: C1. Telefono: E1.\n" + 
+				"CUENTAS BANCARIAS:\n" + 
+				"---CUENTA: Numero: 999-786-444.\n" + 
+				"---Saldo: 4500.0€.\n" + 
+				"---Limite: 900.0€.\n" + 
+				"---Fecha de apertura: 05/06/2015.\n" + 
+				"---Tarjetas de credito asociadas:\n" + 
+				"-----Tarjeta: Numero: 6438-9345-6567. Limite: 350.8€. Numero de usos: 0.";
+		Assertions.assertEquals(textoCl1, cl1.verDatosUsuario());
+		
+		String textoCl2 = "USUARIO:\n" + 
+				"NIF: D2.\n" + 
+				"Nombre: A2. Apellidos: B2. Edad: 56 años.\n" + 
+				"Direccion: C2. Telefono: E2.\n" + 
+				"CUENTAS BANCARIAS:\n" + 
+				"---CUENTA: Numero: 456-027-722.\n" + 
+				"---Saldo: 58000.3€.\n" + 
+				"---Limite: 1200.0€.\n" + 
+				"---Fecha de apertura: 23/10/2012.\n" + 
+				"---Tarjetas de credito asociadas:\n" + 
+				"-----Tarjeta: Numero: 7443-0662-1123. Limite: 670.4€. Numero de usos: 3.\n" + 
+				"-----Tarjeta: Numero: 1234-5678-9405. Limite: 150.0€. Numero de usos: 0.";
+		Assertions.assertEquals(textoCl2, cl2.verDatosUsuario());
+		
+		System.out.println(cl3.verDatosUsuario());
+		String textoCl3 = "USUARIO:\n" + 
+				"NIF: D3.\n" + 
+				"Nombre: A3. Apellidos: B3. Edad: 56 años.\n" + 
+				"Direccion: C3. Telefono: E3.\n" + 
+				"CUENTAS BANCARIAS:\n" + 
+				"---CUENTA: Numero: 123-005-556.\n" + 
+				"---Saldo: 2324.9€.\n" + 
+				"---Limite: 450.5€.\n" + 
+				"---Fecha de apertura: 18/02/2017.\n" + 
+				"---Tarjetas de credito asociadas:\n" + 
+				"-----Tarjeta: Numero: 1000-5000-9900. Limite: 250.0€. Numero de usos: 0.\n" + 
+				"---CUENTA: Numero: 000-000-006.\n" + 
+				"---Saldo: 10000.0€.\n" + 
+				"---Limite: 50000.0€.\n" + 
+				"---Fecha de apertura: 18/07/2017.\n" + 
+				"---Tarjetas de credito asociadas:";
+	}
 
 }
