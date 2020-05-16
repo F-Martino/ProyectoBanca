@@ -3,6 +3,11 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Clase de tests que comprueban los constructores, getters y setters de la clase Cuenta.
+ * @author Fernando
+ *
+ */
 class TestCuenta {
 
 	@Test
