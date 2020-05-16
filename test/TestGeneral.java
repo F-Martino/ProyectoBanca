@@ -3,6 +3,12 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Clase de tests que comprueban los métodos de ingresar y retirar dinero y los métodos que muestra datos.
+ * Combina las clases Tarjeta, Cuenta y Cliente.
+ * @author Fernando
+ *
+ */
 class TestGeneral {
 	ArrayList<Tarjeta> tarjetas1 = new ArrayList<>();
 	ArrayList<Tarjeta> tarjetas2 = new ArrayList<>();
@@ -154,7 +160,6 @@ class TestGeneral {
 				"-----Tarjeta: Numero: 1234-5678-9405. Limite: 150.0€. Numero de usos: 0.";
 		Assertions.assertEquals(textoCl2, cl2.verDatosUsuario());
 		
-		System.out.println(cl3.verDatosUsuario());
 		String textoCl3 = "USUARIO:\n" + 
 				"NIF: D3.\n" + 
 				"Nombre: A3. Apellidos: B3. Edad: 56 años.\n" + 
@@ -171,6 +176,7 @@ class TestGeneral {
 				"---Limite: 50000.0€.\n" + 
 				"---Fecha de apertura: 18/07/2017.\n" + 
 				"---Tarjetas de credito asociadas:";
+		Assertions.assertEquals(textoCl3, cl3.verDatosUsuario());
 	}
 
 }
