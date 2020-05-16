@@ -81,7 +81,7 @@ public class Cuenta {
 
 	/**
 	 * Método que devuelve el límite de retirada de la cuenta.
-	 * @return saldo double - Límite de retirada actual de la cuenta.
+	 * @return limite double - Límite de retirada actual de la cuenta.
 	 */
 	public double getLimite() {
 		return limite;
@@ -89,7 +89,7 @@ public class Cuenta {
 
 	/**
 	 * Método que permite modificar el límite de retirada de la cuenta.
-	 * @param saldo double - Nuevo límite de retirada de la cuenta.
+	 * @param limite double - Nuevo límite de retirada de la cuenta.
 	 */
 	public void setLimite(double limite) {
 		this.limite = limite;
@@ -97,7 +97,7 @@ public class Cuenta {
 
 	/**
 	 * Método que devuelve la fecha de apertura de la cuenta.
-	 * @return numeroCuenta String - Fecha de apertura de la cuenta.
+	 * @return fechaApertura String - Fecha de apertura de la cuenta.
 	 */
 	public String getFechaApertura() {
 		return fechaApertura;
@@ -105,7 +105,7 @@ public class Cuenta {
 
 	/**
 	 * Método que permite modificar la fecha de apertura de la cuenta.
-	 * @param numeroCuenta String - Nueva fecha de apertura de la cuenta.
+	 * @param fechaApertura String - Nueva fecha de apertura de la cuenta.
 	 */
 	public void setFechaApertura(String fechaApertura) {
 		this.fechaApertura = fechaApertura;
@@ -129,7 +129,7 @@ public class Cuenta {
 	
 	/**
 	 * Método que permite añadir una nueva tarjeta asociada a la cuenta.
-	 * @param tarjeta Tarjeta - Nueva tarjeta asociada a la cuenta.
+	 * @param t Tarjeta - Nueva tarjeta asociada a la cuenta.
 	 */
 	public void nuevaTarjeta(Tarjeta t) {
 		this.tarjetas.add(t);

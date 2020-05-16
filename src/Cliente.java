@@ -145,7 +145,7 @@ public class Cliente {
 
 	/**
 	 * Método que permite modificar la edad del cliente.
-	 * @param telefono String - Nueva edad del cliente.
+	 * @param edad String - Nueva edad del cliente.
 	 */
 	public void setEdad(int edad) {
 		this.edad = edad;
@@ -161,7 +161,7 @@ public class Cliente {
 
 	/**
 	 * Método que permite modificar la lista de cuentas bancarias del cliente.
-	 * @param telefono String - Nueva lista de cuentas bancarias del cliente.
+	 * @param cuentas String - Nueva lista de cuentas bancarias del cliente.
 	 */
 	public void setCuentas(ArrayList<Cuenta> cuentas) {
 		this.cuentas = cuentas;
@@ -169,7 +169,7 @@ public class Cliente {
 
 	/**
 	 * Método que permite añadir una cuenta bancaria nueva a la lista de cuentas del cliente.
-	 * @param cuenta Cuenta - Nueva cuenta bancaria.
+	 * @param c Cuenta - Nueva cuenta bancaria.
 	 */
 	public void nuevaCuenta(Cuenta c) {
 		this.cuentas.add(c);
