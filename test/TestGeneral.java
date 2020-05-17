@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
- * Clase de tests que comprueban los métodos de ingresar y retirar dinero y los métodos que muestra datos.
+ * Clase de tests que comprueban los métodos de ingresar y retirar dinero y los métodos que muestran datos.
  * Combina las clases Tarjeta, Cuenta y Cliente.
  * @author Fernando
  *
@@ -196,6 +196,23 @@ class TestGeneral {
 				"---Fecha de apertura: 18/07/2017.\n" + 
 				"---Tarjetas de credito asociadas:";
 		Assertions.assertEquals(textoCl3, cl3.verDatosUsuario());
+	}
+	
+	@Test
+	void TestMostrarDatosSaldoMedio() {
+		listaSaldos();
+		tarjetas();
+		cuentas();
+		
+		String texto1 = "El saldo medio los últimos 12 meses en la cuenta 999-786-444 es de 4500.0€.\n";
+		Assertions.assertEquals(texto1, cl1.verSaldoMedio());
+		
+		String texto2 = "El saldo medio los últimos 12 meses en la cuenta 456-027-722 es de 34333.433333333334€.\n";
+		Assertions.assertEquals(texto2, cl2.verSaldoMedio());
+		
+		String texto3 = "El saldo medio los últimos 12 meses en la cuenta 123-005-556 es de 3662.45€.\n"
+				+ "El saldo medio los últimos 12 meses en la cuenta 000-000-006 es de 10000.0€.\n";
+		Assertions.assertEquals(texto3, cl3.verSaldoMedio());
 	}
 
 }

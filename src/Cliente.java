@@ -280,6 +280,9 @@ public class Cliente {
 	 */
 	public String verSaldoMedio() {
 		String texto = "";
+		for(Cuenta i : this.cuentas) {
+			texto += "El saldo medio los últimos 12 meses en la cuenta " + i.getNumeroCuenta() + " es de " + i.saldoMedio() + "€.\n";
+		}
 		return texto;
 	}
 
