@@ -155,7 +155,7 @@ public class Cuenta {
 		double sum = 0;
 		for(double i: this.saldoDoceMeses)
 			sum += i;
-		double res = sum / 12;
+		double res = sum / this.saldoDoceMeses.size();
 		
 		return res;
 	}
