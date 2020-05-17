@@ -136,7 +136,7 @@ public class Cuenta {
 	/**
 	 * Método que al cambiar de mes añade el saldo de la cuenta del nuevo mes,
 	 * si ya había guardados 12 meses borra el más antigüo
-	 * @param saldoNuevoMes
+	 * @param saldoNuevoMes double - Saldo en la cuenta al comienzo del nuevo mes.
 	 */
 	public void nuevoMes(double saldoNuevoMes) {
 		if(this.saldoDoceMeses.size() < 12)
