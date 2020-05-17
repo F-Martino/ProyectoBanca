@@ -41,9 +41,20 @@ class TestCliente {
 		ArrayList<Cuenta> cuentas1 = new ArrayList<>();
 		ArrayList<Cuenta> cuentas2 = new ArrayList<>();
 		ArrayList<Cuenta> cuentas3 = new ArrayList<>();
-		Cuenta c1 = new Cuenta("999-786-444", 4500.0, 900.0, "05/06/2015");
-		Cuenta c2 = new Cuenta("456-027-722", 58000.3, 1200.0, "23/10/2012");
-		Cuenta c3 = new Cuenta("123-005-556", 2324.9, 450.5, "18/02/2017");
+		
+		ArrayList<Double> lista1 = new ArrayList<>();
+		lista1.add(4500.0);
+		ArrayList<Double> lista2 = new ArrayList<>();
+		lista2.add(15000.0);
+		lista2.add(30000.0);
+		lista2.add(58000.3);
+		ArrayList<Double> lista3 = new ArrayList<>();
+		lista3.add(5000.0);
+		lista3.add(2324.9);
+		
+		Cuenta c1 = new Cuenta("999-786-444", 4500.0, 900.0, "05/06/2015", lista1);
+		Cuenta c2 = new Cuenta("456-027-722", 58000.3, 1200.0, "23/10/2012", lista2);
+		Cuenta c3 = new Cuenta("123-005-556", 2324.9, 450.5, "18/02/2017", lista3);
 		cuentas1.add(c1);
 		cuentas2.add(c2);
 		cuentas2.add(c3);

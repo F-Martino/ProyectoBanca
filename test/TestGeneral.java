@@ -22,15 +22,31 @@ class TestGeneral {
 	ArrayList<Cuenta> cuentas1 = new ArrayList<>();
 	ArrayList<Cuenta> cuentas2 = new ArrayList<>();
 	ArrayList<Cuenta> cuentas3 = new ArrayList<>();
-	Cuenta c1 = new Cuenta("999-786-444", 4500.0, 900.0, "05/06/2015", tarjetas1);
-	Cuenta c2 = new Cuenta("456-027-722", 58000.3, 1200.0, "23/10/2012", tarjetas2);
-	Cuenta c3 = new Cuenta("123-005-556", 2324.9, 450.5, "18/02/2017", tarjetas3);
-	Cuenta c4 = new Cuenta("000-000-006", 10000, 50000, "18/07/2017");
+	
+	ArrayList<Double> lista1 = new ArrayList<>();
+	ArrayList<Double> lista2 = new ArrayList<>();
+	ArrayList<Double> lista3 = new ArrayList<>();
+	ArrayList<Double> lista4 = new ArrayList<>();
+	
+	Cuenta c1 = new Cuenta("999-786-444", 4500.0, 900.0, "05/06/2015", lista1, tarjetas1);
+	Cuenta c2 = new Cuenta("456-027-722", 58000.3, 1200.0, "23/10/2012", lista2, tarjetas2);
+	Cuenta c3 = new Cuenta("123-005-556", 2324.9, 450.5, "18/02/2017", lista3,tarjetas3);
+	Cuenta c4 = new Cuenta("000-000-006", 10000, 50000, "18/07/2017", lista4);
 	
 	
 	Cliente cl1 = new Cliente ("A1", "B1", "C1", "D1", "E1", 56, cuentas1);
 	Cliente cl2 = new Cliente ("A2", "B2", "C2", "D2", "E2", 56, cuentas2);
 	Cliente cl3 = new Cliente ("A3", "B3", "C3", "D3", "E3", 56, cuentas3);
+	
+	void listaSaldos() {
+		lista1.add(4500.0);
+		lista2.add(15000.0);
+		lista2.add(30000.0);
+		lista2.add(58000.3);
+		lista3.add(5000.0);
+		lista3.add(2324.9);
+		lista4.add(10000.0);
+	}
 	
 	void tarjetas() {
 		tarjetas1.add(t1);
@@ -48,6 +64,7 @@ class TestGeneral {
 
 	@Test
 	void testIngresarRetirar() {
+		listaSaldos();
 		tarjetas();
 		cuentas();
 		
@@ -87,6 +104,7 @@ class TestGeneral {
 	
 	@Test
 	void testUsarTarjeta() {
+		listaSaldos();
 		tarjetas();
 		cuentas();
 		
@@ -130,6 +148,7 @@ class TestGeneral {
 
 	@Test
 	void TestMostrarDatos() {
+		listaSaldos();
 		tarjetas();
 		cuentas();
 		
