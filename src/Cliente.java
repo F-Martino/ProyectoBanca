@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Clase que guarda los datos de un cliente.
  * Sus datos son el nombre, apellidos, dirección, NIF, teléfono, edad y una lista con sus cuentas bancarias.
- * @author Fernando
+ * @author Fernando Martino
  *
  */
 public class Cliente {

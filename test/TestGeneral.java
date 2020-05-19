@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Clase de tests que comprueban los métodos de ingresar y retirar dinero y los métodos que muestran datos.
  * Combina las clases Tarjeta, Cuenta y Cliente.
- * @author Fernando
+ * @author Fernando Martino
  *
  */
 class TestGeneral {

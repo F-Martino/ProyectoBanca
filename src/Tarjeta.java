@@ -1,7 +1,7 @@
 /**
  * Clase que representa a una tarjeta de crédito.
  * Contiene el número de la tarjeta, el límite de retirada y el número de veces que ha sido usada.
- * @author Fernando
+ * @author Fernando Martino
  *
  */
 public class Tarjeta {

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Clase de tests que comprueban los constructores, getters y setters de la clase Cliente.
- * @author Fernando
+ * @author Fernando Martino
  *
  */
 class TestCliente {
